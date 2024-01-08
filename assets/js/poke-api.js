@@ -12,7 +12,12 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.types = types
     pokemon.type = type
 
-    pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
+    const shiny = document.getElementById('shiny')
+    if(shiny.checked){
+        pokemon.photo = pokeDetail.sprites.other.showdown.front_shiny
+    }else{
+        pokemon.photo = pokeDetail.sprites.other.showdown.front_default
+    }
 
     return pokemon
 }

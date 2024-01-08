@@ -30,7 +30,24 @@ function loadPokemonItens(offset, limit) {
     })
 }
 
+const shiny = document.getElementById('shiny')
+const normal = document.getElementById('normal')
+
+
 loadPokemonItens(offset, limit)
+
+shiny.addEventListener('click', () => {
+    pokemonList.innerHTML = ''
+    offset = 0
+    loadPokemonItens(offset, limit)
+})
+
+normal.addEventListener('click', () => {
+    pokemonList.innerHTML = ''
+    offset = 0
+    loadPokemonItens(offset, limit)
+})
+
 
 loadMoreButton.addEventListener('click', () => {
     offset += limit
